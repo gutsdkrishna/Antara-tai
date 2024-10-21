@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Doctor Scraper",
+  "version": "1.0",
+  "description": "Scrapes doctor data from Practo and downloads it as JSON.",
+  "permissions": ["activeTab", "scripting", "downloads"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+    
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.practo.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+  
+  
+}
